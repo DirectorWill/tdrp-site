@@ -7,7 +7,7 @@ date: 2026-11-03
 author: "Sammy"
 featured: false
 breaking: false
-draft: true
+draft: false
 ---
 
 <!-- EDITOR: NOT VERIFIED. The 30-day grace period for 10/26 defendants could not be confirmed on cityofdelrio.com or in news coverage, and the source post was flagged as AI content. Do not publish the 30-day claim until the court (830-774-8691) confirms it. Note: Oct. 26, 2026, was a Monday, and the court's posted dockets are Tuesday through Friday. Everything below the line is verified from the city website. -->

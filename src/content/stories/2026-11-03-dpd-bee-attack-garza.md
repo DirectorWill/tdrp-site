@@ -7,7 +7,7 @@ date: 2026-11-03
 author: "Sammy"
 featured: false
 breaking: false
-draft: true
+draft: false
 ---
 
 DEL RIO, Texas — Three Del Rio police officers were stung multiple times on Saturday, Oct. 24, while rescuing a man who was attacked by bees during yard work on West Garza Street, according to the [Del Rio Police Department](https://www.facebook.com/DelRioPoliceDepartment/posts/pfbid0nztJZGNE6bPFuC81uA9rmQ4brUPZFx2VK1C6875UhoWP6bAC7qybNinxqV6rurtAl).
