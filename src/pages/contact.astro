@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+const email = 'thedelriopost@gmail.com';
+---
+<Base title="Contact | The Del Rio Post" active="">
+<main class="wrap" style="max-width:760px;padding:32px 16px 56px">
+  <h1 style="font-size:2.2rem;margin:0 0 12px">Contact Us</h1>
+  <p style="font-size:1.1rem;line-height:1.6">Have a news tip, a correction, or a question for The Del Rio Post? Email us at:</p>
+  <p style="font-size:1.5rem;margin:18px 0"><a href={`mailto:${email}`} style="color:#c8102e;font-weight:700">{email}</a></p>
+  <p style="line-height:1.6">We read every message. For corrections, please include the story headline and what needs fixing.</p>
+</main>
+</Base>
