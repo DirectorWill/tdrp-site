@@ -5,7 +5,7 @@ category: "Police"
 image: "/uploads/drpd-bee-attack-garza.jpg"
 date: 2026-11-03
 author: "Sammy"
-featured: false
+featured: true
 breaking: false
 draft: false
 ---
