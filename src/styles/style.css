@@ -54,11 +54,9 @@ footer ul{list-style:none;padding:0;margin:0;font-size:14px;line-height:2}.copy{
 .breaking{background:var(--dark);color:#fff;font-size:13px}.breaking .wrap{padding:8px 20px}.breaking b{background:var(--red);padding:2px 8px;margin-right:8px;text-transform:uppercase;font-size:11px;letter-spacing:1px}
 .body p{font-size:18px;font-family:var(--serif);line-height:1.7}
 
-/* Prominent logo, small name below */
-.masthead .brand{flex-direction:column;gap:6px}
-.masthead .brand img{width:120px;height:120px}
-.masthead .brand h1{font-size:22px;letter-spacing:2px}
-.masthead .tagline{margin-top:2px}
-.mob-bar .brand{flex-direction:column;gap:2px}
-.mob-bar .brand img{width:52px;height:52px}
-.mob-bar .brand b{font-size:12px;letter-spacing:1px}
+/* Prominent logo, small name below (desktop only) */
+.masthead{padding:14px 0 10px}
+.masthead .brand{flex-direction:column;gap:2px}
+.masthead .brand img{width:80px;height:80px}
+.masthead .brand h1{font-size:17px;letter-spacing:2px}
+.masthead .tagline{margin-top:0;font-size:12px}
