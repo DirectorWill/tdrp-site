@@ -7,7 +7,7 @@ date: 2026-11-03
 author: "Sammy"
 featured: false
 breaking: false
-draft: true
+draft: false
 ---
 
 <!-- EDITOR: Quotes come from YouTube auto-captions of the official meeting video, with video timestamps. Check the dollar figure against the agenda packet; the captions garbled the exact amount. -->

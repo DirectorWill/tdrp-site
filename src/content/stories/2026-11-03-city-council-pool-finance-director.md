@@ -7,7 +7,7 @@ date: 2026-11-03
 author: "Sammy"
 featured: false
 breaking: false
-draft: true
+draft: false
 ---
 
 <!-- EDITOR: Quotes come from a machine transcript of the official city video (Swagit), with timestamps from the video. The audio was poor, so the speakers on the dais are not identified in the transcript. Before publishing, watch the cited timestamps to confirm who said each quote, and name them. -->

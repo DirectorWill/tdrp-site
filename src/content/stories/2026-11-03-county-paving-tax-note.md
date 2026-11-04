@@ -7,7 +7,7 @@ date: 2026-11-03
 author: "Sammy"
 featured: false
 breaking: false
-draft: true
+draft: false
 ---
 
 DEL RIO, Texas — Val Verde County Commissioners Court voted 5-0 on Wednesday, Oct. 21, to approve a $2,175,000 tax note to pay for county paving and other public works.

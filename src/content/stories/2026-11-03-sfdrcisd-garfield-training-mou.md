@@ -7,7 +7,7 @@ date: 2026-11-03
 author: "Sammy"
 featured: false
 breaking: false
-draft: true
+draft: false
 ---
 
 <!-- EDITOR: Quotes come from YouTube auto-captions of the district's official video, with video timestamps. Trustees are referred to by role because the captions garble names. Before publishing, confirm the names at the cited timestamps. -->
