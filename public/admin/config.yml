@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: OWNER/tdrp-site   # TODO: replace with the real GitHub repo
+  repo: DirectorWill/tdrp-site   # TODO: replace with the real GitHub repo
   branch: main
   base_url: https://api.netlify.com   # Netlify OAuth provider
   auth_endpoint: auth
