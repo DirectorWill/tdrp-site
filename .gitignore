@@ -3,3 +3,5 @@ dist/
 .astro/
 shots/
 .announced-stories.txt
+.loaded-drafts.txt
+load-drafts.sh
