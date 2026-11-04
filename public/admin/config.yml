@@ -6,8 +6,8 @@ backend:
   auth_endpoint: auth
 media_folder: public/uploads
 public_folder: /uploads
-site_url: https://thedelriopost.netlify.app
-display_url: https://thedelriopost.netlify.app
+site_url: https://thedelriopost.com
+display_url: https://thedelriopost.com
 collections:
   - name: stories
     label: Stories
