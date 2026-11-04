@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro'; import Card from '../components/Card.astro'; import Ph from '../components/Ph.astro'; import Aside from '../components/Aside.astro';
+import { allStories, slugify, isSample } from '../lib/util';
+import settings from '../data/settings.json';
+const all = await allStories();
+const lead = all.find(s=>s.data.featured) ?? all[0];
+const rest = all.filter(s=>s!==lead);
+const side = rest.slice(0,4), latest = rest.slice(4,7), more = rest.slice(7);
+---
+<Base title={`The Del Rio Post | ${settings.tagline}`}>
+<main class="wrap">
+{lead && <section class="hero"><article class="lead"><Ph image={lead.data.image} label="Lead photo placeholder" /><a class="cat" href={`/category/${slugify(lead.data.category)}/`}>{lead.data.category}</a> {isSample(lead.data.title) && <span class="sample">Sample</span>}<h2><a href={`/stories/${lead.id}/`}>{lead.data.title}</a></h2><p class="meta">{lead.data.summary}</p></article>
+<div class="side">{side.slice(0,2).map((s,i)=><Card s={s} i={i+1} summary={false} />)}</div><div class="side">{side.slice(2,4).map((s,i)=><Card s={s} i={i+3} summary={false} />)}</div></section>}
+<div class="layout"><div>
+{latest.length>0 && <><h2 class="sec-title"><span>Latest</span></h2><div class="grid3">{latest.map((s,i)=><Card s={s} i={i} />)}</div></>}
+{more.length>0 && <><h2 class="sec-title"><span>More Stories</span></h2><div class="list">{more.map((s,i)=><div class="row"><Ph image={s.data.image} i={i} /><div><Card s={s} img={false} /></div></div>)}</div></>}
+{all.length<6 && <p class="meta">More stories coming soon.</p>}
+</div><Aside stories={all} /></div></main></Base>

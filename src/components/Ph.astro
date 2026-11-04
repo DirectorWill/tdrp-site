@@ -1,0 +1,5 @@
+---
+const { image = '', i = 0, label = 'Photo placeholder' } = Astro.props;
+const g = ['', 'g2', 'g3', 'g4'][i % 4];
+---
+<div class={`ph ${g}`}>{image ? <img src={image} alt="" loading="lazy" /> : label}</div>

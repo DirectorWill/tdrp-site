@@ -1,0 +1,20 @@
+---
+import '../styles/style.css';
+import settings from '../data/settings.json';
+import { CATEGORIES, slugify, allStories } from '../lib/util';
+const { title, active = 'Home' } = Astro.props;
+const nav = [['Home','/'], ...CATEGORIES.map(c=>[c,`/category/${slugify(c)}/`])];
+const breaking = (await allStories()).find(s=>s.data.breaking);
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><link rel="icon" href="/assets/favicon.png"></head><body>
+<div class="topbar"><div class="wrap"><span>Del Rio, Texas</span><span>{settings.tagline}</span></div></div>
+<header class="masthead wrap"><div class="tools left"><button class="btn" data-open aria-label="Open menu">☰ Sections</button></div>
+<a class="brand" href="/"><img src="/assets/logo.png" alt="The Del Rio Post logo"><div><h1>The Del Rio Post</h1><p class="tagline">{settings.tagline}</p></div></a>
+<div class="tools right"><a href="#newsletter">Newsletter</a><a class="btn" href="#">Subscribe</a></div></header>
+<nav class="mainnav" aria-label="Main"><ul>{nav.map(([n,h])=>(<li><a href={h} class={n===active?'active':''}>{n}</a></li>))}</ul></nav>
+<div class="mob-bar"><button class="menu-toggle" data-open aria-expanded="false" aria-controls="drawer">☰ Menu</button><a class="brand" href="/"><img src="/assets/logo.png" alt="TDRP"><b>TDRP</b></a><a class="btn" href="#">Subscribe</a></div>
+<div class="scrim" id="scrim" data-close></div><div class="drawer" id="drawer" aria-label="Menu"><button class="close" data-close aria-label="Close menu">×</button><img src="/assets/logo.png" width="56" alt=""><p class="tagline">{settings.tagline}</p><ul>{nav.map(([n,h])=>(<li><a href={h}>{n}</a></li>))}</ul></div>
+{breaking && <div class="breaking"><div class="wrap"><b>Breaking</b><a href={`/stories/${breaking.id}/`}>{breaking.data.title}</a></div></div>}
+<slot />
+<footer><div class="cols wrap"><div><h5>The Del Rio Post</h5><p>{settings.tagline} Local news for Del Rio and Val Verde County, Texas.</p></div><div><h5>Sections</h5><ul>{CATEGORIES.slice(0,4).map(c=>(<li><a href={`/category/${slugify(c)}/`}>{c}</a></li>))}</ul></div><div><h5>About</h5><ul><li><a href="#">Contact</a></li><li><a href="#">Send a tip</a></li><li><a href="#">Corrections</a></li></ul></div></div><div class="copy">© <span data-year></span> The Del Rio Post</div></footer>
+<script is:inline src="/assets/main.js"></script></body></html>

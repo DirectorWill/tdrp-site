@@ -1,0 +1,9 @@
+---
+import settings from '../data/settings.json';
+const { stories } = Astro.props;
+---
+<aside>
+  <div class="widget"><h4>Most Read</h4>{stories.slice(0,5).map((s,n)=>(<div class="mini"><b>{n+1}</b><a href={`/stories/${s.id}/`}>{s.data.title}</a></div>))}</div>
+  <div class="widget news-box" id="newsletter"><h3>Morning Briefing</h3><p>Del Rio headlines in your inbox (demo form, not connected).</p><input type="email" placeholder="you@example.com" aria-label="Email"><button class="btn" type="button">Sign up</button></div>
+  <div class="widget"><h4>Follow TDRP</h4><p style="text-align:center"><a href={settings.facebook}>Facebook</a></p></div>
+</aside>

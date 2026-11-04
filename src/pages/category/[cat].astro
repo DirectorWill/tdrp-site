@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro'; import Card from '../../components/Card.astro'; import Ph from '../../components/Ph.astro'; import Aside from '../../components/Aside.astro';
+import { allStories, slugify, CATEGORIES } from '../../lib/util';
+export function getStaticPaths(){ return CATEGORIES.map(c=>({params:{cat:slugify(c)},props:{name:c}})); }
+const { name } = Astro.props;
+const all = await allStories(); const list = all.filter(s=>s.data.category===name);
+---
+<Base title={`${name} | The Del Rio Post`} active={name}><main class="wrap"><div class="page-head"><p class="cat">Section</p><h2>{name}</h2></div>
+<div class="layout"><div>{list.length===0 ? <p class="meta">No stories in this section yet.</p> : <><div class="grid3">{list.slice(0,3).map((s,i)=><Card s={s} i={i} />)}</div><div class="list">{list.slice(3).map((s,i)=><div class="row"><Ph image={s.data.image} i={i} /><div><Card s={s} img={false} /></div></div>)}</div></>}</div><Aside stories={all} /></div></main></Base>

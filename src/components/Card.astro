@@ -1,0 +1,13 @@
+---
+import Ph from './Ph.astro';
+import { slugify, fmt, isSample } from '../lib/util';
+const { s, i = 0, summary = true, img = true } = Astro.props;
+const d = s.data;
+---
+<article class="card">
+  {img && <Ph image={d.image} i={i} />}
+  <a class="cat" href={`/category/${slugify(d.category)}/`}>{d.category}</a> {isSample(d.title) && <span class="sample">Sample</span>}
+  <h3><a href={`/stories/${s.id}/`}>{d.title}</a></h3>
+  {summary && <p>{d.summary}</p>}
+  <div class="meta">By {d.author} · {fmt(d.date)}</div>
+</article>

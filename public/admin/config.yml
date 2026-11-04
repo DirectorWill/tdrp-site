@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: OWNER/tdrp-site   # TODO: replace with the real GitHub repo
+  branch: main
+  base_url: https://api.netlify.com   # Netlify OAuth provider
+  auth_endpoint: auth
+media_folder: public/uploads
+public_folder: /uploads
+site_url: https://example.netlify.app
+display_url: https://example.netlify.app
+collections:
+  - name: stories
+    label: Stories
+    label_singular: Story
+    folder: src/content/stories
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} ({{category}})"
+    sortable_fields: [date, title, category]
+    fields:
+      - { label: Headline, name: title, widget: string }
+      - { label: Summary, name: summary, widget: text, hint: "One or two sentences shown on cards." }
+      - label: Category
+        name: category
+        widget: select
+        options: ["City of Del Rio", "Val Verde County", "Schools", "Police", "Health", "Community"]
+      - { label: Photo, name: image, widget: image, required: false, choose_url: false }
+      - { label: Publish date, name: date, widget: datetime }
+      - { label: Author, name: author, widget: string, default: "TDRP Staff" }
+      - { label: "Feature as lead story", name: featured, widget: boolean, default: false }
+      - { label: "Show as breaking news banner", name: breaking, widget: boolean, default: false }
+      - { label: Story, name: body, widget: markdown }
+  - name: settings
+    label: Site settings
+    files:
+      - name: site
+        label: Site settings
+        file: src/data/settings.json
+        format: json
+        fields:
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Facebook page URL, name: facebook, widget: string }
