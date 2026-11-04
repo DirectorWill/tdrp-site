@@ -3,7 +3,7 @@ import '../styles/style.css';
 import settings from '../data/settings.json';
 import { CATEGORIES, slugify, allStories } from '../lib/util';
 const { title, active = 'Home' } = Astro.props;
-const nav = [['Home','/'], ...CATEGORIES.map(c=>[c,`/category/${slugify(c)}/`])];
+const nav = [['Home','/'], ...CATEGORIES.map(c=>[c,`/category/${slugify(c)}/`]), ['About Us','/about/']];
 const breaking = (await allStories()).find(s=>s.data.breaking);
 ---
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><link rel="icon" href="/assets/favicon.png"></head><body>
