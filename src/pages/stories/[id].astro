@@ -1,11 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro'; import Ph from '../../components/Ph.astro'; import Aside from '../../components/Aside.astro';
 import { allStories, slugify, fmt, isSample } from '../../lib/util';
-import { render } from 'astro:content';
+import { render } from 'astro:content'; import settings from '../../data/settings.json';
 export async function getStaticPaths(){ return (await allStories()).map(s=>({params:{id:s.id},props:{s}})); }
 const { s } = Astro.props; const d = s.data; const { Content } = await render(s); const all = await allStories();
 ---
 <Base title={`${d.title} | The Del Rio Post`} active={d.category}><main class="wrap"><div class="layout"><article class="article">
 <a class="cat" href={`/category/${slugify(d.category)}/`}>{d.category}</a> {isSample(d.title) && <span class="sample">Sample</span>}
-<h2>{d.title}</h2><p class="meta">By {d.author} · {fmt(d.date)}</p><Ph image={d.image} label="Feature photo placeholder" />
+<h2>{d.title}</h2><p class="meta">By <strong>{d.author}</strong> · {fmt(d.date)}{settings.authors?.[d.author] && <><br><a href={`mailto:${settings.authors[d.author]}`} style="color:#c8102e">{settings.authors[d.author]}</a></>}</p><Ph image={d.image} label="Feature photo placeholder" />
 <div class="body"><Content /></div></article><Aside stories={all} /></div></main></Base>
