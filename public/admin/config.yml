@@ -29,6 +29,7 @@ collections:
       - { label: Author, name: author, widget: string, default: "TDRP Staff" }
       - { label: "Feature as lead story", name: featured, widget: boolean, default: false }
       - { label: "Show as breaking news banner", name: breaking, widget: boolean, default: false }
+      - { label: "Draft (hidden from site)", name: draft, widget: boolean, default: true, hint: "Leave ON until Willard approves. Turn OFF to publish." }
       - { label: Story, name: body, widget: markdown }
   - name: settings
     label: Site settings

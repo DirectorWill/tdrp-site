@@ -6,7 +6,7 @@ const stories = defineCollection({
   schema: z.object({
     title: z.string(), summary: z.string(), category: z.enum(CATEGORIES),
     image: z.string().optional().default(''), date: z.coerce.date(),
-    author: z.string().default('TDRP Staff'), featured: z.boolean().default(false), breaking: z.boolean().default(false),
+    author: z.string().default('TDRP Staff'), featured: z.boolean().default(false), breaking: z.boolean().default(false), draft: z.boolean().default(false),
   }),
 });
 export const collections = { stories };
