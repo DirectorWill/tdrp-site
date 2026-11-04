@@ -53,3 +53,12 @@ footer ul{list-style:none;padding:0;margin:0;font-size:14px;line-height:2}.copy{
 .ph{position:relative;overflow:hidden}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .breaking{background:var(--dark);color:#fff;font-size:13px}.breaking .wrap{padding:8px 20px}.breaking b{background:var(--red);padding:2px 8px;margin-right:8px;text-transform:uppercase;font-size:11px;letter-spacing:1px}
 .body p{font-size:18px;font-family:var(--serif);line-height:1.7}
+
+/* Prominent logo, small name below */
+.masthead .brand{flex-direction:column;gap:6px}
+.masthead .brand img{width:120px;height:120px}
+.masthead .brand h1{font-size:22px;letter-spacing:2px}
+.masthead .tagline{margin-top:2px}
+.mob-bar .brand{flex-direction:column;gap:2px}
+.mob-bar .brand img{width:52px;height:52px}
+.mob-bar .brand b{font-size:12px;letter-spacing:1px}
