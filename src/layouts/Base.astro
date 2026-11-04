@@ -10,9 +10,9 @@ const breaking = (await allStories()).find(s=>s.data.breaking);
 <div class="topbar"><div class="wrap"><span>Del Rio, Texas</span><span>{settings.tagline}</span></div></div>
 <header class="masthead wrap"><div class="tools left"><button class="btn" data-open aria-label="Open menu">☰ Sections</button></div>
 <a class="brand" href="/"><img src="/assets/logo.png" alt="The Del Rio Post logo"><div><h1>The Del Rio Post</h1><p class="tagline">{settings.tagline}</p></div></a>
-<div class="tools right"><a href="#newsletter">Newsletter</a><a class="btn" href="#">Subscribe</a></div></header>
+<div class="tools right"><a href="#newsletter">Newsletter</a><!-- Subscribe hidden for now: <a class="btn" href="#">Subscribe</a> --></div></header>
 <nav class="mainnav" aria-label="Main"><ul>{nav.map(([n,h])=>(<li><a href={h} class={n===active?'active':''}>{n}</a></li>))}</ul></nav>
-<div class="mob-bar"><button class="menu-toggle" data-open aria-expanded="false" aria-controls="drawer">☰ Menu</button><a class="brand" href="/"><img src="/assets/logo.png" alt="TDRP"><b>TDRP</b></a><a class="btn" href="#">Subscribe</a></div>
+<div class="mob-bar"><button class="menu-toggle" data-open aria-expanded="false" aria-controls="drawer">☰ Menu</button><a class="brand" href="/"><img src="/assets/logo.png" alt="TDRP"><b>TDRP</b></a><!-- Subscribe hidden for now: <a class="btn" href="#">Subscribe</a> --></div>
 <div class="scrim" id="scrim" data-close></div><div class="drawer" id="drawer" aria-label="Menu"><button class="close" data-close aria-label="Close menu">×</button><img src="/assets/logo.png" width="56" alt=""><p class="tagline">{settings.tagline}</p><ul>{nav.map(([n,h])=>(<li><a href={h}>{n}</a></li>))}</ul></div>
 {breaking && <div class="breaking"><div class="wrap"><b>Breaking</b><a href={`/stories/${breaking.id}/`}>{breaking.data.title}</a></div></div>}
 <slot />
