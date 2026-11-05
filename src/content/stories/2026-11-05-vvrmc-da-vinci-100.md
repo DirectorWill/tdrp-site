@@ -7,7 +7,7 @@ date: 2026-11-05
 author: "Maria"
 featured: false
 breaking: false
-draft: true
+draft: false
 ---
 
 <!-- EDITOR: Photo is from VVRMC’s Oct. 27/28, 2026 news release page (official agency image of the da Vinci 5 system). Credit: Val Verde Regional Medical Center. Primary source: VVRMC news release dated Oct. 27, 2026, posted Oct. 28 at https://www.vvrmc.org/news/releases/vvrmc-s-da-vinci-5-surgical-system-reaches-100-procedures-since-launch/ -->
